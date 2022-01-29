@@ -31,9 +31,14 @@ const Login = () => {
   const loginHandler = () => {
     lognIn()
       .then((res) => {
-        console.log(res);
+        
+        let redirectBaseUrl = "https://leo-movies-app.herokuapp.com/login";
+        if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+          redirectBaseUrl = "http://localhost:3000/login";
+        }
+
         if (res?.data?.request_token) {
-          window.location.href = `https://www.themoviedb.org/authenticate/${res?.data?.request_token}?redirect_to=http://localhost:3000/login`;
+          window.location.href = `https://www.themoviedb.org/authenticate/${res?.data?.request_token}?redirect_to=${redirectBaseUrl}`;
         }
       })
       .catch((err) => {
