@@ -31,9 +31,9 @@ const Login = () => {
   const loginHandler = () => {
     lognIn()
       .then((res) => {
-        
+        console.log("NODE_ENV",process.env.NODE_ENV);
         let redirectBaseUrl = "https://leo-movies-app.herokuapp.com/login";
-        if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+        if (process.env.NODE_ENV === "development") {
           redirectBaseUrl = "http://localhost:3000/login";
         }
 
