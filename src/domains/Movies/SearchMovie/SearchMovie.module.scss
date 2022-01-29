@@ -1,0 +1,12 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.searchInputWrapper {
+  display: flex;
+  justify-content: center;
+  margin: $extra-large-size;
+  input {
+    height: 20px;
+    min-width: 250px;
+  }
+}

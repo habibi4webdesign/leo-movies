@@ -1,0 +1,19 @@
+@import "../../styles/variables";
+
+.root {
+  display: flex;
+  align-items: center;
+  margin: $medium-size;
+  span {
+    margin-right: $small-size;
+    height: 25px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 160px;
+    white-space: nowrap;
+  }
+}
+
+.name {
+  font-weight: 900;
+}

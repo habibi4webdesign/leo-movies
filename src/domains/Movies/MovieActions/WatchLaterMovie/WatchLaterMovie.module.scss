@@ -1,0 +1,8 @@
+@import "../../../../styles/variables";
+
+.root {
+  svg {
+    right: $medium-size * 4;
+    top: $medium-size;
+  }
+}

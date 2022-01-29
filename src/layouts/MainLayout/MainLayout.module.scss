@@ -1,0 +1,105 @@
+@import "../../styles/variables";
+
+.root {
+  height: 100vh;
+  width: 100%;
+  overflow: scroll;
+  .sidebar {
+    background-color: $black;
+    position: fixed;
+    min-height: 100%;
+    float: left;
+    transition: all 0.3s;
+    z-index: 1;
+  }
+  .content {
+    float: right;
+    width: 80%;
+    position: relative;
+    height: 100%;
+  }
+}
+
+.opened {
+  width: 15%;
+}
+
+.closed {
+  width: $medium-size * 6;
+}
+
+.sidebarLinksWrapper {
+  margin: $medium-size;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  a {
+    color: $white;
+    margin-bottom: $medium-size;
+    text-decoration: none;
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+.toggleWrapper {
+  width: 100%;
+  height: $extra-large-size * 3;
+}
+
+.toggleMenu {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  float: right;
+  z-index: 1000;
+  margin-bottom: $extra-large-size;
+}
+
+.toggleMenu i {
+  position: absolute;
+  display: block;
+  height: 2px;
+  background: #0094fc;
+  width: 30px;
+  left: 0px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.toggleMenu i:nth-child(1) {
+  top: 16px;
+}
+
+.toggleMenu i:nth-child(2) {
+  top: 24px;
+}
+
+.toggleMenu i:nth-child(3) {
+  top: 32px;
+}
+
+.active i:nth-child(1) {
+  top: 25px;
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+.active i:nth-child(2) {
+  background: transparent;
+}
+
+.active i:nth-child(3) {
+  top: 25px;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+
+@media (max-width: $desktop-break-point) {
+  .opened {
+    width: 75%;
+  }
+}

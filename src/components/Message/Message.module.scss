@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+
+.root {
+  font-size: $large-font-size;
+  font-weight: bold;
+}
+
+.isInCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
